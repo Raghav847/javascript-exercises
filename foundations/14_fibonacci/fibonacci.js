@@ -1,4 +1,20 @@
-const fibonacci = function() {
+const fibonacci = function(countArg) {
+    let count
+    if (typeof countArg !== 'number') {
+        count = parseInt(countArg)
+    } else {
+        count = countArg
+    }
+    if (count < 0) {
+        return "OOPS";
+    }
+    if (count === 0) {
+        return 0;
+    }
+    if (count === 1 || count === 2) {
+        return 1;
+    }
+    return fibonacci(count - 1) + fibonacci(count - 2)
 
 };
 
